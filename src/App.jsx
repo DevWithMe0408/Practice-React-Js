@@ -6,6 +6,15 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  // function myFunction() {
+  //   console.log('This is my function')
+  // }
+
+  const myFunction = () => {
+    console.log("This is arrow function syntax")
+  }
+  myFunction()
+
   return (
     <>
       <div>
