@@ -1,0 +1,155 @@
+/* src/App.css */
+
+/* --- General Styles & Body --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Main Container --- */
+.todo-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+}
+
+/* --- Header Component --- */
+.app-header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #ff6b6b, #ffc107);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* --- AddTaskForm Component --- */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.add-task-form input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.add-task-form input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+.add-task-form input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.add-task-form button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-task-form button:hover {
+    background-color: #2980b9;
+}
+
+/* --- TaskList & TaskItem Components --- */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-btn svg {
+    color: #555;
+    width: 16px;
+    height: 16px;
+}
+
+.action-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- DeleteAllButton Component --- */
+.delete-all-btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.delete-all-btn {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    color: #e74c3c;
+    background-color: #fdf2f2;
+    border: 1px solid #f9d7d7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-all-btn:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border-color: #e74c3c;
+}
