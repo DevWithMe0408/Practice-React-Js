@@ -2,12 +2,13 @@ const DeleteIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="16" heig
 const EditIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.5-.5H2a.5.5 0 0 1-.5-.5v-1.5a.5.5 0 0 1 .5-.5H3v-1h-.5a.5.5 0 0 1-.5-.5V6H1.5a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5h2.536l6.852 6.852a.5.5 0 0 1-.707.707L3.5 5.707V13.5a.5.5 0 0 1-.5.5z" /></svg>;
 
 const TaskItem = (props) => {
-    const { task } = props;
+    const { task, deleteById } = props;
+    console.log('Rendering TaskItem:', task);
     return (
         <li className="task-item">
             <span className="task-text">{task.text}</span>
             <div className="task-actions">
-                <button className="action-btn" aria-label="Delete task">
+                <button className="action-btn" aria-label="Delete task" onClick={() => deleteById(task.id)}>
                     <DeleteIcon />
                 </button>
                 <button className="action-btn" aria-label="Edit task">
@@ -17,4 +18,4 @@ const TaskItem = (props) => {
         </li>
     )
 }
-export default TaskItem;
+export default TaskItem; 

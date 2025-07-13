@@ -12,6 +12,11 @@ const App = () => {
     { id: 3, text: 'learning English' },
   ]);
 
+  const deleteById = (id) => {
+    const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+  }
+
   const addTask = (taskText) => {
     const newTask = {
       id: tasks.length + 1,
@@ -26,7 +31,9 @@ const App = () => {
       <AddTaskForm
         addTask={addTask}
       />
-      <TaskList tasks={tasks} />
+      <TaskList
+        tasks={tasks}
+        deleteById={deleteById} />
       <DeleteAllButton />
 
     </div>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 const AddTaskForm = (props) => {
     const { addTask } = props;
+
     const [inputValue, setInputValue] = useState('');
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (inputValue.trim() === '') return; // Prevent adding empty tasks
