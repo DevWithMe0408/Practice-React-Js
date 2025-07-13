@@ -1,8 +1,8 @@
-import AddTaskForm from "./components/project/todolist/AddTaskForm"
-import DeleteAllButton from "./components/project/todolist/DeleteAllButton"
-import Header from "./components/project/todolist/Header"
-import TaskList from "./components/project/todolist/TaskList"
-import './components/project/todolist/todo.css'
+import AddTaskForm from "./components/todolist/AddTaskForm"
+import DeleteAllButton from "./components/todolist/DeleteAllButton"
+import Header from "./components/todolist/Header"
+import TaskList from "./components/todolist/TaskList"
+import './components/todolist/todo.css'
 import { useState } from "react";
 const App = () => {
 
@@ -12,10 +12,20 @@ const App = () => {
     { id: 3, text: 'learning English' },
   ]);
 
+  const addTask = (taskText) => {
+    const newTask = {
+      id: tasks.length + 1,
+      text: taskText,
+    };
+    setTasks([...tasks, newTask]);
+    console.log('Them thanh cong task: ', newTask);
+  };
   return (
     <div className="todo-container">
       <Header />
-      <AddTaskForm />
+      <AddTaskForm
+        addTask={addTask}
+      />
       <TaskList tasks={tasks} />
       <DeleteAllButton />
 
