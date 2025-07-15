@@ -1,6 +1,7 @@
 import AddTaskForm from "./components/todolist/AddTaskForm"
 import DeleteAllButton from "./components/todolist/DeleteAllButton"
 import Header from "./components/todolist/Header"
+import TaskItem from "./components/todolist/TaskItem"
 import TaskList from "./components/todolist/TaskList"
 import './components/todolist/todo.css'
 import { useState } from "react";
@@ -31,9 +32,19 @@ const App = () => {
       <AddTaskForm
         addTask={addTask}
       />
-      <TaskList
-        tasks={tasks}
-        deleteById={deleteById} />
+      <TaskList>
+        {tasks.map((task) => {
+          console.log('Rendering TaskItem:', task);
+          return (
+            <TaskItem
+              key={task.id}
+              task={task}
+              deleteById={deleteById}
+            />
+          )
+        })}
+      </TaskList>
+
       <DeleteAllButton />
 
     </div>

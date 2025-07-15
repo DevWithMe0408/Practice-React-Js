@@ -1,16 +1,10 @@
 import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {
-    const { tasks, deleteById } = props;
+    const { children } = props;
     return (
         <ul className="task-list">
-            {tasks.map((task) => (
-                <TaskItem
-                    key={task.id}
-                    task={task}
-                    deleteById={deleteById}
-                />
-            ))}
+            {children}
         </ul>
     );
 }
