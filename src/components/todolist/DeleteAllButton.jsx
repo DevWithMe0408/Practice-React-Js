@@ -1,3 +1,4 @@
+import './todo.css'
 const DeleteAllButton = () => {
     return (
         <div className="delete-all-btn-container">

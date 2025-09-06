@@ -1,3 +1,4 @@
+import './todo.css'
 import TaskItem from "./TaskItem";
 
 const TaskList = (props) => {

@@ -1,9 +1,9 @@
+import { Outlet } from "react-router-dom"
+import Header from "./components/layout/Header"
 import AddTaskForm from "./components/todolist/AddTaskForm"
 import DeleteAllButton from "./components/todolist/DeleteAllButton"
-import Header from "./components/todolist/Header"
 import TaskItem from "./components/todolist/TaskItem"
 import TaskList from "./components/todolist/TaskList"
-import './components/todolist/todo.css'
 import { useState } from "react";
 const App = () => {
 
@@ -27,27 +27,30 @@ const App = () => {
     console.log('Them thanh cong task: ', newTask);
   };
   return (
-    <div className="todo-container">
+    <>
       <Header />
-      <AddTaskForm
-        addTask={addTask}
-      />
-      <TaskList>
-        {tasks.map((task) => {
-          console.log('Rendering TaskItem:', task);
-          return (
-            <TaskItem
-              key={task.id}
-              task={task}
-              deleteById={deleteById}
-            />
-          )
-        })}
-      </TaskList>
+      <Outlet />
+      <div className="todo-container">
+        <AddTaskForm
+          addTask={addTask}
+        />
+        <TaskList>
+          {tasks.map((task) => {
+            console.log('Rendering TaskItem:', task);
+            return (
+              <TaskItem
+                key={task.id}
+                task={task}
+                deleteById={deleteById}
+              />
+            )
+          })}
+        </TaskList>
 
-      <DeleteAllButton />
+        <DeleteAllButton />
 
-    </div>
+      </div>
+    </>
   )
 }
 
