@@ -7,12 +7,19 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import ProductPage from './pages/ProductPage.jsx'
 import UsersPage from './pages/UsersPage.jsx'
 import './styles/global.css'
+import TodoApp from './components/todolist/TodoApp.jsx'
+import ErrorPage from './pages/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    children: [
+    errorElement: <ErrorPage />,
+    children: [ // nested routes
+      {
+        index: true,
+        element: <TodoApp />,
+      },
       {
         path: '/product',
         element: <ProductPage />,
