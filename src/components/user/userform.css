@@ -1,0 +1,27 @@
+.user-form-container {
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.user-form-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: block;
+    text-align: center;
+}
+
+.user-form-group {
+    margin-bottom: 16px;
+}
+
+.user-form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}

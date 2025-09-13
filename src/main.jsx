@@ -14,10 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />, // xu ly page not found
     children: [ // nested routes
       {
-        index: true,
+        index: true, // index route
         element: <TodoApp />,
       },
       {

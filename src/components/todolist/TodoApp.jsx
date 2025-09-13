@@ -26,25 +26,27 @@ const TodoApp = () => {
     };
     return (
         <>
-            <div className="todo-container">
-                <AddTaskForm
-                    addTask={addTask}
-                />
-                <TaskList>
-                    {tasks.map((task) => {
-                        console.log('Rendering TaskItem:', task);
-                        return (
-                            <TaskItem
-                                key={task.id}
-                                task={task}
-                                deleteById={deleteById}
-                            />
-                        )
-                    })}
-                </TaskList>
+            <div className="todo-app-center">
+                <div className="todo-container">
+                    <AddTaskForm
+                        addTask={addTask}
+                    />
+                    <TaskList>
+                        {tasks.map((task) => {
+                            console.log('Rendering TaskItem:', task);
+                            return (
+                                <TaskItem
+                                    key={task.id}
+                                    task={task}
+                                    deleteById={deleteById}
+                                />
+                            )
+                        })}
+                    </TaskList>
 
-                <DeleteAllButton />
+                    <DeleteAllButton />
 
+                </div>
             </div>
         </>
     )
