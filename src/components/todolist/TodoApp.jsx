@@ -33,7 +33,6 @@ const TodoApp = () => {
                     />
                     <TaskList>
                         {tasks.map((task) => {
-                            console.log('Rendering TaskItem:', task);
                             return (
                                 <TaskItem
                                     key={task.id}
