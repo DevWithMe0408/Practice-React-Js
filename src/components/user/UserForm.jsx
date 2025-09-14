@@ -22,6 +22,11 @@ const UserForm = () => {
                 message: 'Thông báo',
                 description: "Tạo user thành công"
             });
+        } else {
+            notification.error({
+                message: 'Thông báo',
+                description: JSON.stringify(response.message)
+            });
         }
     };
 
