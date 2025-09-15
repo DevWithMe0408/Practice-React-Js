@@ -1,6 +1,6 @@
 import { Button, Input, notification } from "antd";
 import { use, useState } from "react";
-import { createUser } from "../../services/api.service";
+import { createUserApi } from "../../services/api.service";
 
 const UserForm = () => {
     const [fullname, setFullname] = useState('');
@@ -15,7 +15,7 @@ const UserForm = () => {
             password: password,
             phone: phoneNumber
         };
-        const response = await createUser(data);
+        const response = await createUserApi(data);
         console.log('response create user', response);
         if (response.data && response.data) {
             notification.success({
