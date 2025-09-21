@@ -1,6 +1,6 @@
 import { Space, Table, Tag } from 'antd';
 import { getAllUsersApi } from "../../services/api.service";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UserTable = () => {
     const [dataUsers, setDataUsers] = useState([
@@ -89,10 +89,16 @@ const UserTable = () => {
         console.log('response get all users', response.data);
         setDataUsers(response.data);
     };
-    fetchAllUsers();
+
+    useEffect(() => {
+        fetchAllUsers();
+    }, []);
 
     return (
-        <Table columns={columns} dataSource={dataUsers} />
+        <Table
+            columns={columns}
+            dataSource={dataUsers}
+            rowKey={"_id"} />
     )
 }
 export default UserTable;
