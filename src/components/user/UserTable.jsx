@@ -3,10 +3,7 @@ import { getAllUsersApi } from "../../services/api.service";
 import { useEffect, useState } from "react";
 
 const UserTable = () => {
-    const [dataUsers, setDataUsers] = useState([
-        { _id: 1, fullName: 'Nguyen Van A', email: 'nguyenvana@example.com', phone: '0123456789' },
-        { _id: 2, fullName: 'Nguyen Van B', email: 'nguyenvanb@example.com', phone: '0123456790' },
-    ]);
+    const [dataUsers, setDataUsers] = useState([]);
 
     const columns = [
         {
@@ -61,29 +58,7 @@ const UserTable = () => {
         //     ),
         // },
     ];
-    // const data = [
-    //     {
-    //         key: '1',
-    //         name: 'John Brown',
-    //         age: 32,
-    //         address: 'New York No. 1 Lake Park',
-    //         tags: ['nice', 'developer'],
-    //     },
-    //     {
-    //         key: '2',
-    //         name: 'Jim Green',
-    //         age: 42,
-    //         address: 'London No. 1 Lake Park',
-    //         tags: ['loser'],
-    //     },
-    //     {
-    //         key: '3',
-    //         name: 'Joe Black',
-    //         age: 32,
-    //         address: 'Sydney No. 1 Lake Park',
-    //         tags: ['cool', 'teacher'],
-    //     },
-    // ];
+
     const fetchAllUsers = async () => {
         const response = await getAllUsersApi();
         console.log('response get all users', response.data);

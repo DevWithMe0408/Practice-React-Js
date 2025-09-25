@@ -8,6 +8,7 @@ const UsersPage = () => {
                 <UserForm />
             </div>
             <div>
+                <h3>Danh sách user</h3>
                 <UserTable />
             </div>
         </div>
